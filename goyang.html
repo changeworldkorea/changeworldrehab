@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>고양시 </title>
+
+</head>
+<body>
+	<h1> 고양시 재활센터 </h1>
+
+<div id="map" style="width:100%;height:350px;"></div>
+
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=1048191b0a1823550e187559dc64c962"></script>
+<script>
+var mapContainer = document.getElementById('map'), // 지도를 표시할 div
+    mapOption = {
+        center: new kakao.maps.LatLng(37.6304827257998, 126.83203430905343), // 지도의 중심좌표
+        level: 7 // 지도의 확대 레벨
+    };
+
+var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+
+// 마커를 표시할 위치와 title 객체 배열입니다
+var positions = [
+    {
+        title: '박재현재활운동센터 고양점',
+        latlng: new kakao.maps.LatLng(37.6304827257998, 126.83203430905343)
+    },
+    {
+        title: '바로잡기체형센터',
+        latlng: new kakao.maps.LatLng(37.63571799567863, 126.83336068857557)
+    },
+    {
+        title: '포올 운동 발달센터 & 행복한 검도(아동)',
+        latlng: new kakao.maps.LatLng(37.62596022623507, 126.8352247038107)
+    },
+    {
+        title: '위드아동발달센터(아동)',
+        latlng: new kakao.maps.LatLng(37.6130404015416, 126.83317498921363)
+    }
+];
+
+// 마커 이미지의 이미지 주소입니다
+var imageSrc = "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png";
+
+for (var i = 0; i < positions.length; i ++) {
+
+    // 마커 이미지의 이미지 크기 입니다
+    var imageSize = new kakao.maps.Size(24, 35);
+
+    // 마커 이미지를 생성합니다
+    var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize); 
+
+    // 마커를 생성합니다
+    var marker = new kakao.maps.Marker({
+        map: map, // 마커를 표시할 지도
+        position: positions[i].latlng, // 마커를 표시할 위치
+        title : positions[i].title, // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
+        image : markerImage // 마커 이미지
+    });
+}
+
+</script>
+
+<ol>
+<li>박재현재활운동센터 고양점</li>
+<li>바로잡기체형센터</li>
+<li>포올 운동 발달센터 & 행복한 검도(아동)</li>
+<li>위드아동발달센터(아동)</li>
+<li>참잘크는아이들 원흥점(아동)</li>
+<li>고양시재활스포츠센터</li>
+<li>연세재활운동센터</li>
+<li>이주능재활운동센터(필라테스? 뇌졸중?)</li>
+<li>수케어재활센터</li>
+<li>뉴힐링라이프재활운동센터 일산점</li>
+<li>해봄발달센터(아동)</li>
+<li>늘푸른수중운동센터(장애인)</li>
+<li>한국스포츠건강증진센터</li>
+<li>네오짐발달센터(아동)</li>
+<li>고양체형교정원(미용쪽이긴한데 애매)</li>
+<li>킴스체형교정센터</li>
+<li>관절치유 체형교정</li>
+<li>약손체형교정(애매하네)</li>
+<li>KDI스포츠클리닉</li>
+</ol>
+
+</body>
+</html>
